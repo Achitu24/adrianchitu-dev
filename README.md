@@ -1,2 +1,3 @@
-# adrianchitu-dev
-Personal Resume
+# Adrian Chitu's CV
+
+### Personal Resume made with Vue.js
