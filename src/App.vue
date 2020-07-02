@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       name: {
-        first: "Adrian",
+        first: "Adrian ",
         last: "Chitu"
       }
     };
