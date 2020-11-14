@@ -1,65 +1,58 @@
 <template>
-  <div>
-    <b-carousel
-      id="carousel-1"
-      v-model="slide"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="480"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-      <!-- Text slides with image -->
-      <b-carousel-slide
-        caption="First slide"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://picsum.photos/1024/480/?image=52"
-      ></b-carousel-slide>
-
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
-      </b-carousel-slide>
-
-      <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
-
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <template v-slot:img>
-          <img
-            class="d-block img-fluid w-100"
-            width="1024"
-            height="480"
-            src="https://picsum.photos/1024/480/?image=55"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>Adrian Chssitu</p>
-      </b-carousel-slide>
-    </b-carousel>
+  <div id="app">
+    <Navigation :name="name" />
+    <b-container class="p-0" fluid>
+      <About :name="name" />
+      <Border />
+      <Experience />
+      <Border />
+      <Education />
+      <Border />
+      <Skills />
+      <Border />
+      <Interests />
+      <Border />
+      <Awards />
+    </b-container>
   </div>
 </template>
 
 <script>
-</script>
+import smoothScroll from 'smooth-scroll';
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Interests from "@/components/Interests";
+import Awards from "@/components/Awards";
+import Navigation from "@/components/Navigation";
+import Border from "@/components/Border";
+
+export default {
+  name: "app",
+  data() {
+    return {
+      name: {
+        first: "Clarence",
+        last: "Taylor"
+      }
+    }
+  },
+  components: {
+    About,
+    Experience,
+    Education,
+    Skills,
+    Interests,
+    Awards,
+    Navigation,
+    Border
+  },
+  created: function() {
+    var scroll = new smoothScroll('a[href*="#"]', {
+      updateURL: false
+    })
+  }
+};
+</script>
