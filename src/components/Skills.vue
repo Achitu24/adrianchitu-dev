@@ -10,7 +10,11 @@
       </ul>
       <div class="subheading mb-3">Workflow</div>
       <ul class="fa-ul mb-0">
-        <li v-for="(workflow, index) in workflowList" :key="index" class="d-flex align-items-center">
+        <li
+          v-for="(workflow, index) in workflowList"
+          :key="index"
+          class="d-flex align-items-center"
+        >
           <font-awesome-icon :icon="['fas', 'check']" class="fa-li"></font-awesome-icon>
           {{ workflow }}
         </li>
@@ -38,10 +42,6 @@ export default {
           icon: "js-square"
         },
         {
-          name: "Angular",
-          icon: "angular"
-        },
-        {
           name: "React",
           icon: "react"
         },
@@ -58,14 +58,6 @@ export default {
           icon: "less"
         },
         {
-          name: "WordPress",
-          icon: "wordpress"
-        },
-        {
-          name: "Gulp",
-          icon: "gulp"
-        },
-        {
           name: "Grunt",
           icon: "grunt"
         },
@@ -75,10 +67,10 @@ export default {
         }
       ],
       workflowList: [
-        "Mobile-First, Responsive Design",
-        "Cross Browser Testing & Debugging",
-        "Cross Functional Teams",
-        "Agile Development & Scrum"
+        "Data Structures and algorithms",
+        "Progressive web applications testing & Debugging",
+        "Functional Programming",
+        "Agile Development"
       ]
     };
   }
